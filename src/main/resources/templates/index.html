@@ -7,6 +7,8 @@
 <script type="text/javascript" src="/static/angular.min.js" th:src="@{/angular.min.js}"></script>
 <script type="text/javascript" src="/static/app/app.module.js" th:src="@{/app/app.module.js}"></script>
 <script type="text/javascript" src="/static/app/logviewer.controller.js" th:src="@{/app/logviewer.controller.js}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body ng-app="app" ng-controller="ViewAppLogController as vm">
 <header>
@@ -19,6 +21,13 @@
 		</div>
 	</nav>	
 </header>
+
+ <div class="dropdown" th:if="${info != null}">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Application<span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li th:each="item : *{info}*" th:text="${info.appName}">BGC</li>
+    </ul>
+  </div>
 
 <div>
 	<div class="row">
