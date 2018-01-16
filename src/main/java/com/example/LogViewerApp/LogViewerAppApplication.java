@@ -9,8 +9,8 @@ import org.springframework.stereotype.Controller;
 public class LogViewerAppApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(LogViewerAppApplication.class, args);
 	}
-	
 
 }
